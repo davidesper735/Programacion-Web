@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Programación Web</title> <!-- Título de la página aparece en el título
+        de la pestaña en el navegador que use el usuario.-->
+        <link rel="stylesheet" href="style.css" /> <!-- Enlace a la hoja de estilo -->
+        <link rel="shortcut icon" href="favicon.ico" type="img" /> <!-- Icono de la pestaña en el navegador -->
+    </head>
+    <body>
+
+        <!-- Asignar un identificador único a este apartado de la página -->
+        <div id="seccion3">
+            Hola Mundo Sección 3
+        </div>
+
+        <!-- Tipos de h que puedo usar de Título o simplemente como texto, cada uno con sus
+         diferencias de tamaño h1 > h6 -->
+        <h1>Hola Mundo h1</h1>
+        <h2>Hola mundo h2</h2>
+        <h3>Hola mundo h3</h3>
+        <h4>Hola mundo h4</h4>
+        <h5>Hola mundo h5</h5>
+        <h6>Hola mundo h6</h6>
+
+        <!-- Etiqueta para párrafos -->
+        <p>Este es un párrafo simple.</p>
+    
+        <!-- Negrilla -->
+        <p>Esta es una palabra con 
+            <strong>Negrilla</strong> 
+        </p>
+        
+        <!-- Cursiva -->
+        <p>Esta es una palabra con 
+            <i>Cursiva</i>
+        </p>
+        
+        <!-- Subrayado -->
+        <p>Esta es una palabra con 
+            <u>Subrayado</u>
+        </p>
+
+        <!-- Mixto de los anteriores -->
+        <p>
+            Esta es una frase con 
+            <strong><i><u>Negrilla, Cursiva y Subrayado</u></i></strong>
+        </p>
+
+        <!-- Listas -->
+
+        Mis pendientes son:
+
+        <!-- Lista desordenada y/o con viñetas -->
+        <ul>
+            <li>Hacer la tarea</li>
+            <li>Estudiar para el examen</li>
+            <li>Hacer ejercicio</li>
+        </ul>
+
+        <!-- Lista ordenada -->
+        <ol>
+            <li>Hacer la tarea</li>
+            <li>Estudiar para el examen</li>
+            <li>Hacer ejercicio</li>
+        </ol>
+
+        <!-- Lista de definición -->
+
+        <dl>
+            <dt>Tarea 1</dt> <!-- Título de la definición -->
+            <dd>Hacer la tarea</dd> <!-- Definición o descripción -->
+
+            <dt>Tarea 2</dt>
+            <dd>Estudiar para el examen</dd>
+        </dl>
+
+        <!-- Etiquetas para enlazar, puedo poner enlaces a otras páginas o a recursos externos -->
+
+        <!-- Enlace a otra página dentro del proyecto-->
+        <a href="temas/unidad1.html">
+            Unidad 1
+        </a>
+        <br />
+
+        <!-- Enlace a un recurso externo -->
+        <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">
+            >Sitio del W3C<
+        </a>
+        <br/>
+
+        <!-- Enlace a una sección específica de la misma página usando su identifcador único
+         anteriormente asignado, basta con crear otro similar para crear mas secciones.-->
+        <a href="#seccion3">Ir a la sección 3</a>
+        <br />
+
+        <!-- Enlace para enviar correo electrónico -->
+        <a href="mailto:estudiante@unicesar.edu.co">Escribir</a>
+        <br />
+        <br />
+        <br />
+
+        <!-- Tabla de datos -->
+        <table>
+            <!-- Encabezado de la tabla -->
+            <thead>
+                <tr>
+                    <th scope="col">Estudiante</th>
+                    <th scope="col">Nota</th>
+                </tr>
+            </thead>
+            <!-- Cuerpo de la tabla -->
+            <tbody>
+                <!-- Fila de la tabla -->
+                <tr>
+                    <!-- Columna de la tabla -->
+                    <th scope="row"> García, L.</th> <!-- Nombre del estudiante -->
+                    <td> 4.5</td> <!-- Nota del estudiante -->
+                </tr>
+                <tr>
+                    <th scope="row"> Pérez, M.</th>
+                    <td> 3.8</td>
+                </tr>
+                <tr>
+                    <th scope="row"> Rodríguez, J.</th>
+                    <td> 4.2</td>
+                </tr>
+            </tbody>
+
+            <!-- Pie de la tabla -->
+            <tfoot>
+                <tr>
+                    <th scope="row"> Promedio</th>
+                    <td> 4.17</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- Imágenes -->
+
+        <!-- Imagen local -->
+        <img src="images/imagen2.jpg" alt="Imagen 2" />
+
+        <!-- Imagen remota puede ser a través de una página externa claramente, o simplmente
+         de la misma página del proyecto cómo en este caso.-->
+        <img 
+        src="http://127.0.0.1:5500/Primer%20Corte/Clase%2014-08-2026/images/imagen2.jpg" 
+        alt="Imagen texto"
+        width="200" 
+        height="200"
+        />
+        <!-- Alto y ancho de la imagen --> 
+    </body>
+</html>
+
+<!--@David Esper-->
