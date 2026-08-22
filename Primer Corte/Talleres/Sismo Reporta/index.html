@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sismo-Reporta Colombia</title>
+
+    <style>
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+    }
+</style>
+
+</head>
+<body>
+    <header id="inicio">
+        <h1>Sismo-Reporta Colombia</h1>
+        <nav>
+            <ul>
+                <li><a href="formulario.html">Reporte Ciudadano de Afectación</a></li>
+                <li><a href="#informacion">Información</a></li>
+                <li><a href="#daños">Daños</a></li>
+                <li><a href="#recomendaciones">Recomendaciones</a></li>
+                <li><a href="#replicas">Réplicas</a></li>
+                <li><a href="#video">Vídeo</a></li>
+                <li><a href="#atencion">Atención</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Sismo de Magnitud 5,8 sacude la región</h2>
+
+            <p>El pasado <time datetime="2026-08-14T15:47">14 de agosto de 2026 a las 3:47 p.m.</time>, 
+                un sismo de magnitud 5,8 sacudió la región del Eje Cafetero. 
+                El evento tuvo una duración aproximada de 12 segundos y fue percibido 
+                con fuerte intensidad en varios municipios de Quindío y Risaralda, 
+                generando alarma entre la población.</p>
+            
+            <p>Según el reporte preliminar, el epicentro se localizó cerca del municipio 
+                de Calarcá, Quindío, a una profundidad de 18 kilómetros. 
+                Las autoridades señalan que la profundidad relativamente baja 
+                explica la intensidad con que fue sentido el movimiento 
+                en superficie, aunque hasta el momento no se han reportado 
+                daños estructurales de gravedad.</p>
+        </article>
+
+        <section id="daños">
+            <h2>Daños reportados en Calarcá</h2>
+
+            <figure>
+                <img src="imagenes/grieta.jpg" 
+                alt="Grieta0"
+                width="600" 
+                height="400"/>
+                
+                <figcaption>Vivienda afectada en el municipio de Calarcá tras el sismo del 14 de agosto.</figcaption>
+            </figure>
+        </section>
+
+        <section id="recomendaciones">
+            <h2>Recomendaciones de seguridad ante una réplica</h2>
+
+            <ol>
+                <li>Mantenga la calma y no corra hacia las salidas en medio del movimiento.</li>
+                <li>Ubíquese debajo de un mueble resistente o junto a una columna.</li>
+                <li>Aléjese de ventanas, espejos y objetos que puedan caer.</li>
+                <li>Una vez termine el movimiento, evacúe con calma hacia un punto de encuentro abierto.</li>
+                <li>No utilice ascensores hasta confirmar que el edificio es seguro.</li>
+            </ol>
+        </section>
+
+        <section id="replicas">
+            <h2>Tabla de Réplicas Registradas</h2>
+
+            <table border="1" cellpadding="5" cellspacing="1">
+                <caption>Registro de réplicas del sismo del 14 de agosto de 2026</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Magnitud</th>
+                        <th scope="col">Profundidad (km)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">15:50</th>
+                        <td>4,2</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16:05</th>
+                        <td>3,8</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16:30</th>
+                        <td>4,0</td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Datos obtenidos del Servicio Geológico Colombiano</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="video">
+            <h2>Vídeo Informativo</h2>
+
+            <iframe
+                width="700" 
+                height="300" 
+                src="https://www.youtube.com/embed/6Im9ezEwFdw" 
+                title="Consejos para sobrevivir en un terremoto. Compártelo con tu familia" 
+                allowfullscreen>
+            </iframe>
+            
+            <p>Si el video no se reproduce, puede acceder a él directamente en 
+                <a href="https://www.youtube.com/watch?v=6Im9ezEwFdw">YouTube</a>
+            </p>
+        </section>
+
+        <section id="atencion">
+            <h2>Líneas de Atención</h2>
+
+            <dl>
+                <dt>Cruz Roja Colombiana</dt>
+                <dd>018000 511 111</dd>
+
+                <dt>Unidad Nacional para la Gestión del Riesgo de Desastres</dt>
+                <dd>(601) 552 9696</dd>
+
+                <dt>Defensa Civil Colombiana</dt>
+                <dd>144</dd>
+            </dl>
+        </section>
+    </main>
+    
+    <footer>
+        <p><a href="#inicio">Volver al inicio</a></p>
+        <p>&copy; David Esper.</p>
+        <p>Todos los Derechos Reservados.</p>
+    </footer>
+</body>
+</html>

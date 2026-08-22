@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+        /* Bloque de CSS interno, escrito directamente en este documento.
+           Todo lo de adentro está comentado (desactivado), por eso no se aplica:
+           p {
+               color: red;
+               background-color: yellow;
+               font-family: Arial, sans-serif;
+               width: 50%;
+           }
+        */
+    </style>
+
+</head>
+<body>
+
+
+    <p style="color: blue; font-size: 20px;">Este es un párrafo con estilo en línea.</p>
+    <!-- Párrafo con CSS "en línea": el atributo style aplica reglas de estilo
+         directamente sobre esta etiqueta, solo afecta a este párrafo -->
+
+    <p class="estilos" id="p1">Hola, mundo!</p>
+    <!-- Párrafo con dos "ganchos" para aplicar estilos/scripts desde afuera:
+         class="estilos" -> puede compartirse con otros elementos que tengan la misma clase
+         id="p1"          -> identificador único, solo este elemento puede tenerlo -->
+
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+    <!-- Campo de texto donde el usuario puede escribir.
+         placeholder muestra un texto de ejemplo en gris que desaparece al escribir
+         (nota: no tiene <label> asociado ni atributo name) -->
+
+</body>
+</html>

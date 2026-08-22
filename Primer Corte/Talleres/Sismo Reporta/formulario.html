@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reporte</title>
+    
+    <style>
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+    }
+    </style>
+
+</head>
+<body>
+    <header id="inicio">
+        <h1>Reporte Ciudadano de Afectación</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Anterior</a></li>
+                <li><a href="#datos">Datos del Reportante</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#detalles">Detalles del Sismo</a></li>
+                <li><a href="#daños">Daños Observados</a></li>
+            </ul>
+        </nav>
+
+        <p>Complete el siguiente formulario si su vivienda resultó afectada por el sismo. Toda la información será tratada de forma confidencial.</p>
+
+    </header>
+    <main>
+        <section id="formularios">
+
+            <form action="#" method="post">
+            <fieldset id="datos">
+                <legend>Datos del Reportante</legend>
+
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Nombre"
+                    required
+                    minlength="3"
+                    maxlength="50"
+                    />
+                </div>
+                <br>
+                <div>
+                    <label for="documento">Documento:</label>
+                    <input
+                    type="text"
+                    id="documento"
+                    name="documento"
+                    placeholder="Documento"
+                    pattern="[0-9]{6,10}"
+                    title="Ingrese un número de documento válido (6 a 10 dígitos)"
+                    />
+                </div>
+                <br>
+                <div>
+                    <label for="correo">Correo:</label>
+                    <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="Correo"
+                    required
+                    />
+                </div>
+                <br>
+                <div>
+                    <label for="celular">Celular:</label>
+                    <input
+                    type="tel"
+                    id="celular"
+                    name="celular"
+                    placeholder="Celular"
+                    pattern="3[0-9]{9}"
+                    title="Ingrese un número de celular válido (10 dígitos)"
+                    />
+                </div>
+            </fieldset>
+
+            <fieldset id="ubicacion">
+                <legend>Ubicación</legend>
+
+                <div>
+                    <label for="departamento">Departamento:</label>
+                    <select id="departamento" name="departamento">
+                        <option value="" selected disabled>Seleccione un departamento</option>
+
+                        <optgroup label="Región Andina">
+
+                            <option value="antioquia">Antioquia</option>
+                            <option value="cundinamarca">Cundinamarca</option>
+                            <option value="boyaca">Boyacá</option>
+                            <option value="caldas">Caldas</option>
+                            <option value="huila">Huila</option>
+                            <option value="norte_de_santander">Norte de Santander</option>
+                            <option value="quindio">Quindío</option>
+                            <option value="risaralda">Risaralda</option>
+                            <option value="santander">Santander</option>
+                            <option value="tolima">Tolima</option>
+                        </optgroup>
+
+                        <optgroup label="Región Caribe">
+
+                            <option value="atlantico">Atlántico</option>
+                            <option value="bolivar">Bolívar</option>
+                            <option value="cesar">Cesar</option>
+                            <option value="cordoba">Córdoba</option>
+                            <option value="la_guajira">La Guajira</option>
+                            <option value="magdalena">Magdalena</option>
+                            <option value="sucre">Sucre</option>
+                        </optgroup>
+
+                        <optgroup label="Región Orinoquía">
+
+                            <option value="arauca">Arauca</option>
+                            <option value="casanare">Casanare</option>
+                            <option value="meta">Meta</option>
+                            <option value="vichada">Vichada</option>
+                        </optgroup>
+
+                        <optgroup label="Región Pacífica">
+
+                            <option value="choco">Chocó</option>
+                            <option value="valle_del_cauca">Valle del Cauca</option>
+                            <option value="nariño">Nariño</option>
+                            <option value="cauca">Cauca</option>
+                        </optgroup>
+
+                        <optgroup label="Región Amazonía">
+
+                            <option value="amazonas">Amazonas</option>
+                            <option value="caqueta">Caquetá</option>
+                            <option value="putumayo">Putumayo</option>
+                            <option value="guaviare">Guaviare</option>
+                            <option value="guainia">Guainía</option>
+                            <option value="vaupes">Vaupés</option>
+                        </optgroup>
+
+                        <optgroup label="Región Insular">
+                            <option value="san_andres">San Andrés y Providencia</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="municipio">Municipio:</label>
+                    <input
+                    type="text"
+                    id="municipio"
+                    name="municipio"
+                    placeholder="Municipio"
+                    list="municipios"
+                    />
+
+                    <datalist id="municipios">
+                        <option value="Cali">
+                        <option value="Medellín">
+                        <option value="Bogotá">
+                        <option value="Barranquilla">
+                        <option value="Cartagena">
+                    </datalist>
+                </div>
+                <br>
+                <div>
+                    <label for="direccion">Dirección:</label>
+                    <input
+                    type="text"
+                    id="direccion"
+                    name="direccion"
+                    placeholder="Dirección"
+                    maxlength="120"
+                    required
+                    />
+                </div>
+            </fieldset>
+
+            <fieldset id="detalles">
+                <legend>Detalles del Sismo</legend>
+
+                <div>
+                    <label for="fechahora">Fecha y Hora del Sismo:</label>
+                    <input
+                    type="datetime-local"
+                    id="fechahora"
+                    name="fechahora"
+                    required
+                    max="2026-08-14T23:59"
+                    />
+                </div>
+
+                <div>
+                    <label for="intensidad">Intensidad Percibida (Mercalli):</label>
+                    <input
+                    type="range"
+                    id="intensidad"
+                    name="intensidad"
+                    min="1"
+                    max="12"
+                    step="1"
+                    value="5"
+                    list="marcas"
+                    />
+
+                    <datalist id="marcas">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                        <option value="6"></option>
+                        <option value="7"></option>
+                        <option value="8"></option>
+                        <option value="9"></option>
+                        <option value="10"></option>
+                        <option value="11"></option>
+                        <option value="12"></option>
+                    </datalist>
+                </div>
+            </fieldset>
+
+            <fieldset id="daños">
+                <legend>Daños Observados</legend>
+
+                <div>
+                    <h3>Tipo de Afectación</h3>
+                    <p>Puede seleccionar uno o más tipos de afectación.</p>
+
+                    <div>
+                        <input
+                        type="checkbox"
+                        id="grietas"
+                        name="afectacion"
+                        value="grietas"
+                        />
+                        <label for="grietas">Grietas</label>
+                    </div>
+
+                    <div>
+                        <input
+                        type="checkbox"
+                        id="muros"
+                        name="afectacion"
+                        value="muros"
+                        />
+                        <label for="muros">Muros</label>
+                    </div>
+
+                    <div>
+                        <input
+                        type="checkbox"
+                        id="servicosp"
+                        name="afectacion"
+                        value="servicosp"
+                        />
+                        <label for="servicosp">Servicios Públicos</label>
+                    </div>
+
+                    <div>
+                        <input
+                        type="checkbox"
+                        id="vias"
+                        name="afectacion"
+                        value="vias"
+                        />
+                        <label for="vias">Vías</label>
+                    </div>
+
+                    <div>
+                        <input
+                        type="checkbox"
+                        id="ninguna"
+                        name="afectacion"
+                        value="ninguna"
+                        />
+                        <label for="ninguna">Ninguna</label>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="personas">Número de Personas Afectadas:</label>
+                    <input
+                    type="number"
+                    id="personas"
+                    name="personas"
+                    min="0"
+                    required
+                    />
+                </div>
+
+                <div>
+                    <h3>Nivel de Atención Requerido</h3>
+                    <p>Seleccione el nivel de atención que considera necesario para su caso.</p>
+                    <div>
+                        <input
+                        type="radio"
+                        id="alta"
+                        name="atencion"
+                        value="alta"
+                        />
+
+                        <label for="alta">Alta</label>
+                    </div>
+
+                    <div>
+                        <input
+                        type="radio"
+                        id="media"
+                        name="atencion"
+                        value="media"
+                        />
+
+                        <label for="media">Media</label>
+                    </div>
+
+                    <div>
+                        <input
+                        type="radio"
+                        id="baja"
+                        name="atencion"
+                        value="baja"
+                        />
+
+                        <label for="baja">Baja</label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="descripcion">Descripción del Daño:</label>
+                    <textarea
+                    id="descripcion"
+                    name="descripcion"
+                    rows="4"
+                    cols="50"
+                    placeholder="Ingrese una descripción detallada del daño reportado."
+                    maxlength="500"
+                    required
+                    ></textarea>
+                </div>
+                <br>
+                <div>
+                    <label for="evidencia">Evidencia Fotográfica:</label>
+                    <input
+                    type="file"
+                    id="evidencia"
+                    name="evidencia"
+                    accept="image/*"
+                    />
+                </div>
+
+            </fieldset>
+
+            <fieldset id="contacto">
+                <legend>Autorización de Uso de Datos y Contacto</legend>
+
+                <div>
+                    <input
+                    type="checkbox"
+                    id="autorizacion"
+                    name="autorizacion"
+                    value="acepto"
+                    required
+                    />
+                    <label for="autorizacion">Autorizo el tratamiento de mis datos personales, de acuerdo con lo establecido en la Ley 1581 de 2012.</label>
+                </div>
+                <br>
+                <div>
+                    <label for="contacto">Medio de Contacto Preferido</label>
+                    <select id="contacto" name="contacto" required>
+                        <option value="llamada">Llamada telefónica</option>
+                        <option value="whatsapp" selected>WhatsApp</option>
+                        <option value="correo">Correo electrónico</option>
+                        <option value="sms">Mensaje de texto (SMS)</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <br>
+            <button type="submit">Enviar reporte</button>
+            <button type="reset">Limpiar formulario</button>
+        </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="#inicio">Volver al inicio</a></p>
+        <p>&copy; David Esper.</p>
+        <p>Todos los Derechos Reservados.</p>
+    </footer>
+</body>
+</html>

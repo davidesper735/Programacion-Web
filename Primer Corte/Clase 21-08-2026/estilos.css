@@ -1,0 +1,34 @@
+* {
+    background-color: #966262;
+}
+/* Selector universal (*): aplica a TODOS los elementos de la página, sin excepción.
+   Es la especificidad más baja de todas — cualquier otro selector lo puede sobrescribir. */
+
+p, input {
+    color: red;
+    background-color: #5ad509;
+    font-family: Arial, sans-serif;
+    width: 50%;
+}
+/* Selector de etiqueta (o "tipo"): aplica a TODOS los <p> y TODOS los <input> de la página.
+   La coma separa dos selectores distintos que reciben el mismo bloque de estilos. */
+
+.estilos {
+    color: red;
+    background-color: #5ad509;
+    font-family: Arial, sans-serif;
+    width: 50%;
+}
+/* Selector de clase (el punto antes del nombre): aplica a cualquier elemento
+   que tenga class="estilos", sin importar si es <p>, <div>, <input>, etc.
+   Puede repetirse en varios elementos de la página. */
+
+#p1 {
+    color: red;
+    background-color: #5ad509;
+    font-family: Arial, sans-serif;
+    width: 50%;
+}
+/* Selector de id (el numeral antes del nombre): aplica SOLO al elemento
+   que tenga id="p1" — como los id son únicos, este selector afecta como máximo
+   a un solo elemento en toda la página. */
