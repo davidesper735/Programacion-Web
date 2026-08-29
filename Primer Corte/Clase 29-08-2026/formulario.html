@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Ciudadano - Sismo-Reporta Colombia</title>
+    <!-- Vinculamos el mismo archivo CSS para que aplique las reglas del profe -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sismo-Reporta Colombia</h1>
+        <nav>
+            <ul>
+                <!-- Enlace para regresar a la página principal -->
+                <a href="index.html">Volver al Inicio</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Formulario de Reporte de Afectación</h2>
+        <p>Por favor, registra los datos del sismo percibido en tu zona.</p>
+
+        <form action="#" method="POST">
+            <!-- 1. Campo Obligatorio (Verás la línea roja a la izquierda por :required) -->
+            <div class="campo">
+                <label for="ubicacion">Municipio/Ciudad (Obligatorio):</label>
+                <input type="text" id="ubicacion" name="ubicacion" required placeholder="Ej. Calarcá, Quindío">
+            </div>
+
+            <!-- 2. Campo de Correo Electrónico (Si escribes algo mal, se activará :invalid con borde rojo) -->
+            <div class="campo">
+                <label for="correo">Correo Electrónico de Contacto:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+            </div>
+
+            <!-- 3. Casilla de Verificación (Al marcarla, se pondrá verde por :checked) -->
+            <div class="campo-checkbox">
+                <input type="checkbox" id="daños-estructurales" name="daños">
+                <label for="daños-estructurales">¿Hay grietas o daños visibles en su vivienda?</label>
+            </div>
+
+            <!-- 4. Campo Deshabilitado (Se verá gris y el cursor cambiará por :disabled) -->
+            <div class="campo">
+                <label for="codigo-interno">Código de Verificación de Autoridades (Bloqueado):</label>
+                <input type="text" id="codigo-interno" name="codigo" disabled value="SISMO-2026-COL">
+            </div>
+
+            <br>
+
+            <div>
+                <li>Cada uno juega psicológicamente con los otros jugadores.</li>
+                <li>Siempre y tanto tengan una estrategia preparada</li>
+                <li>Para mantener a los demás a flote.</li>
+                <li>Esta es la penúltima fila</li>
+                <li>Esta es la última fila</li>
+
+                
+            </div>
+
+            <div>
+            
+                <p>
+                    Este texto increiblemente largo debería salir en el centro o centrado en la página formulario.html xdddd
+                </p>
+                
+            </div>
+
+            <div>
+                <fieldset>
+                    <legend>Pseudoclases con table y filas</legend>
+                <table border="1" cellpadding="5" cellspacing="1">
+                    <tr>
+                        <td>Fila 1</td>
+                    </tr>
+                    <tr>
+                        <td>Fila 2</td>
+                    </tr>
+                    <tr>
+                        <td>Penúltima Fila</td>
+                    </tr>
+                    <tr>
+                        <td>Última fila</td>
+                    </tr>
+                </table>
+                </fieldset>
+            </div>
+
+            <br>
+
+            <button type="submit">Enviar Reporte</button>
+        </form>
+
+        <br>
+        <br>
+        <div>
+                <button class="btn">Bóton con class="btn"</button>
+                <button class="btn btn-peligro">Botón con class="btn btn-peligro</button>
+            </div>
+
+            <div>
+                <h1><xd> Primer h1</xd></h1>
+                <h2> Primer h2</h2>
+                <h3> Primer h3</h3>
+            </div>
+
+            <label class="requerido">Nombre de usuario</label>
+            <input type="text" required>
+
+            <br>
+            
+            <label>Teléfono opcional</label>
+            <input type="text">
+    </main>
+</body>
+</html>

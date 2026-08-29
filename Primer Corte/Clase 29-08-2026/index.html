@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Enlaces - Sismo-Reporta</title>
+    <!-- Vinculamos tu archivo de estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Panel de Pruebas: Pseudoclases de Enlaces</h1>
+        <p>Usa esta página para ver cómo reacciona el CSS de tu profesor.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. Enlaces Nuevos vs Visitados (`:link` y `:visited`)</h2>
+            <p>Mira los colores de estos enlaces:</p>
+            <ul>
+                <!-- Este enlace inventado se verá VERDE (:link) porque nunca has entrado a él -->
+                <li>
+                    <a href="https://esta-pagina-no-existe-en-el-universo-12345.com">
+                        Enlace No Visitado (Debería verse Verde)
+                    </a>
+                </li>
+                
+                <!-- Estos enlaces a Google o YouTube probablemente se verán MORADOS (:visited) si ya has entrado antes -->
+                <li>
+                    <a href="https://google.com">
+                        Enlace Visitado a Google (Debería verse Morado)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com">
+                        Enlace Visitado a YouTube (Debería verse Morado)
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section style="margin-top: 30px;">
+            <h2>2. Interactuar con el Mouse (`:hover` y `:active`)</h2>
+            <p>Pon a prueba los estados de movimiento y clic:</p>
+            <ul>
+                <!-- Pasa el mouse por encima para ver el subrayado (:hover) -->
+                <li>
+                    <a href="#prueba1">¡Pasa el mouse por encima de mí! (Aparece subrayado)</a>
+                </li>
+                
+                <!-- Haz clic y MANTÉN PRESIONADO el botón del mouse para ver el color ROJO (:active) -->
+                <li>
+                    <a href="#prueba2">¡Haz clic sostenido sobre mí! (Se vuelve Rojo)</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

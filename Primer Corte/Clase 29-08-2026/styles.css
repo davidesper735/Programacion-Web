@@ -1,0 +1,127 @@
+/* --- CÓDIGO DE TU PROFESOR (Con transiciones añadidas para la animación) --- */
+
+a:link { 
+  color: #70A448; /* Verde - enlace no visitado */
+  text-decoration: none; /* Quitamos el subrayado por defecto para que la animación se note más */
+  
+  /* ANIMACIÓN: Aplica una transición suave de 0.3 segundos a todas las propiedades */
+  transition: all 0.3s ease-in-out; 
+} 
+
+a:visited { 
+  color: #6B4FA1; /* Morado - ya visitado */
+} 
+
+a:hover { 
+  color: #497E4A; /* Un verde más oscuro al pasar el cursor (opcional para mejorar el efecto) */
+  text-decoration: underline; /* Mouse encima - regla de tu profe */
+} 
+
+a:active { 
+  color: #C0392B; /* Rojo - mientras se hace clic */
+} 
+
+
+input:focus { outline: 2px solid #70A448; } 
+input:disabled { background: #E9ECEF; cursor: not-allowed; }
+input:checked { accent-color: #497E4A; }
+input:required { border-left: 3px solid #C0392B; }
+input:invalid { border-color: #C0392B; }
+
+
+li:first-child { font-weight: bold; background-color: #70A448; }
+li:last-child { border-bottom: none; background-color: #C0392B;}
+li:nth-child(3) {color: blue}
+
+p:only-child { text-align: center; }
+
+tr:nth-last-child(2) { background: rgb(193, 193, 86); } /* penúltima fila */
+tr:nth-child(even) { color: blue; }
+section:empty { display: none; } /* sin contenido */
+
+
+/* =========================================================
+   1. ENLACES (a)
+   Efecto: Elevación suave hacia arriba al pasar el cursor
+   ========================================================= */
+a {
+  display: inline-block; /* Necesario para que funcione transform */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+  color: #497E4A;
+  text-decoration: underline;
+  transform: translateY(-3px); /* Se eleva 3px */
+}
+
+
+/* =========================================================
+   2. INPUTS (input)
+   Efecto: Expansión de tamaño y sombra al hacer clic/foco
+   ========================================================= */
+input {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+input:focus {
+  outline: none; /* Quitamos el outline por defecto para usar la sombra */
+  border-color: #70A448;
+  transform: scale(1.02); /* Se agranda ligeramente */
+  box-shadow: 0 0 8px rgba(112, 164, 72, 0.5); /* Resplandor suave */
+}
+
+
+/* =========================================================
+   3. ELEMENTOS DE LISTA (li)
+   Efecto: Desplazamiento a la derecha al interactuar
+   ========================================================= */
+li {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+li:first-child:hover {
+  transform: translateX(6px); /* Se mueve a la derecha */
+  background-color: #5b873a;
+}
+
+li:last-child:hover {
+  transform: translateX(6px);
+  background-color: #a02e22;
+}
+
+
+/* =========================================================
+   4. FILAS DE TABLA (tr)
+   Efecto: Escala y resaltado de la penúltima fila al pasar el cursor
+   ========================================================= */
+tr {
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+tr:nth-last-child(2):hover {
+  background-color: rgb(220, 220, 110);
+  transform: scale(1.01); /* Sobresale ligeramente */
+}
+
+/* :not() → todo menos lo indicado */
+.btn:not(.btn-peligro) { background: #70A448; }
+
+/* :is() → agrupa y simplifica */
+:is(h1, h2, h3) xd { color: red; }
+
+/* :has() → selecciona el PADRE según su contenido */
+.tarjeta:has(img) { padding: 0; }
+
+
+/* Falta aún más elementos ((((((((((((((REVISAR))))))))))))))) del pdf de la profe */
+
+
+
+/* La propiedad content es OBLIGATORIA en ::before y ::after */
+.requerido::after {
+content: " *";
+color: #C0392B;
+}
+
+/* Falta aún más elementos ((((((((((((((REVISAR))))))))))))))) del pdf de la profe */
