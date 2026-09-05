@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción</title>
+</head>
+<body>
+
+    <header>
+        <h1>Encuesta de Satisfacción</h1>
+        <p>Formulario de "Encuesta de satisfacción": 
+            una pregunta con radios (1 a 5 estrellas, o "malo/regular/bueno"), 
+            un textarea para comentarios opcional con maxlength, y un type="range" 
+            para "qué tan probable es que nos recomiendes" (0-10).</p>
+    </header>
+
+    <main>
+        <section id="formularios">
+            <form>
+                <section id="satisfaccion">
+                    <label for="satisfaccion">¿Cómo calificaría nuestro servicio?</label><br>
+                    <input type="radio" id="malo" name="satisfaccion" value="malo">
+                    <label for="malo">Malo</label><br>
+                    <input type="radio" id="regular" name="satisfaccion" value="regular">
+                    <label for="regular">Regular</label><br>
+                    <input type="radio" id="bueno" name="satisfaccion" value="bueno">
+                    <label for="bueno">Bueno</label><br>
+                </section>
+
+                <section id="comentarios">
+                    <label for="comentarios">Comentarios (opcional):</label><br>
+                    <textarea id="comentarios" name="comentarios" maxlength="200"></textarea><br>
+                </section>
+
+                <section id="recomendacion">
+                    <label for="recomendacion">¿Qué tan probable es que nos recomiendes? (0-10)</label><br>
+                    <input type="range" id="recomendacion" name="recomendacion" min="0" max="10" list="recomendacion-ticks"><br>
+
+                    <datalist id="recomendacion-ticks">
+                        <option value="0"></option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                        <option value="6"></option>
+                        <option value="7"></option>
+                        <option value="8"></option>
+                        <option value="9"></option>
+                        <option value="10"></option>
+                    </datalist>
+                </section>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

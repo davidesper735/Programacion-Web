@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <header>
+        <h1>Registro a un Evento</h1>
+        <p>Crea un formulario de "Registro a un evento": nombre, correo, un select con 3 opciones, un type="date" (con min para que no permita fechas pasadas), y un checkbox de "Acepto términos" obligatorio. Todo con label/for correcto</p>
+
+        <main>
+            <section id="formularios">
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required><br><br>
+
+                    <label for="opciones">Selecciona una opción:</label>
+                    <select id="opciones" name="opciones">
+                        <option value="opcion1">Opción 1</option>
+                        <option value="opcion2">Opción 2</option>
+                        <option value="opcion3">Opción 3</option>
+                    </select>
+                    <br><br>
+
+                    <label for="fecha">Fecha del evento:</label>
+                    <input type="date" id="fecha" name="fecha" min="2026-08-31" required><br><br>
+
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los términos y Condiciones</label> <br><br>
+                    
+
+                    <input type="submit" value="Registrar">
+                </form>
+            </section>
+        </main>
+    </header>
+</body>
+</html>
