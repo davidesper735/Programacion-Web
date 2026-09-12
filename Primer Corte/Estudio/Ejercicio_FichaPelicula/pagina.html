@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avengers: Endgame</title>
+
+    <style>
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Página de "Ficha de una película o serie" (elige una que te guste): 
+        estructura semántica completa (header, nav, main con varias section, aside, footer), 
+        imagen en figure, tabla de "reparto" (actor/personaje), 
+        y un video o iframe embebido con un tráiler.</p>
+
+    <header id="inicio">
+        <h1>Avengers: Endgame</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#trailer">Tráiler</a></li>
+                <li><a href="#sinopsis">Sinopsis</a></li>
+                <li><a href="#reparto">Reparto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="trailer">
+            <u><h2>Tráiler de la Película</h2></u>
+            <video controls width="600" height="400">
+                <source src="imagenes/video.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <section id="sinopsis">
+            <u><h2>Sinopsis</h2></u>
+            <p>Tras los devastadores sucesos de Avengers: Infinity War, 
+                el universo está en ruinas pero de los que quedan, los Avengers se unirán una vez más 
+                para deshacer la destrucción de Thanos y 
+                restaurar el orden del mundo.</p>
+          </section>
+
+        <section id="reparto">
+
+            <u><h2>Reparto</h2></u>
+
+            <ul>
+                <li>Robert Downey Jr. como Tony Stark / Iron Man</li>
+                <li>Chris Evans como Steve Rogers / Capitán América</li>
+                <li>Mark Ruffalo como Bruce Banner / Hulk</li>
+                <li>Chris Hemsworth como Thor</li>
+                <li>Scarlett Johansson como Natasha Romanoff / Black Widow</li>
+                <li>Jeremy Renner como Clint Barton / Hawkeye</li>
+                <li>Don Cheadle como James Rhodes / War Machine</li>
+                <li>Paul Rudd como Scott</li>
+                <li>Brie Larson como Carol Danvers / Capitana Marvel</li>
+                <li>Karen Gillan como Nebula</li>
+                <li>Danai Gurira como Okoye</li>
+            </ul>
+
+            <aside>
+                    <p><strong>Director:</strong> Anthony Russo, Joe Russo</p>
+                    <p><strong>Guion:</strong> Christopher Markus, Stephen McFeely</p>
+            </aside>
+        </section>
+
+        <footer>
+            <p>© 2024 Marvel Studios. Todos los derechos reservados.</p>
+        </footer>
+    </main>
+</body>
+</html>

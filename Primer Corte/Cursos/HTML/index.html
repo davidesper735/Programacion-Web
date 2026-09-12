@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi Primer Heading</h1>
+    <h2>Mi Segundo Heading</h2>
+    <h3>Mi Tercer Heading</h3>
+    <h4>Mi Cuarto Heading</h4>
+    <h5>Mi Quinto Heading</h5>
+    <h6>Mi Sexto Heading</h6>
+    
+    <p>Chanchito feliz está muy feliz.</p>
+    <p>Chanchito triste está muy triste.</p>
+
+    <hr>
+
+    <h2>Chanchito Felipe</h2>
+    <p>
+        Este texto es <span style="color: blue">mucho más largo</span> 
+        y es para mostrar <br>
+        la etiqueta de span!
+    </p>
+
+    <!-- Comentario: Esto es un comentario en HTML -->
+    <a target="_blank" href="https://www.google.com">Ir a google</a>
+
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" width="300" height="100" />
+    
+    <form action="/formulario.php" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input value="David" type="text" id="nombre" name="nombre" placeholder="Chanchito feliz..."/>
+        <br>
+        <label for="apellido">Apellido:</label>
+        <input value="Esper" type="text" id="apellido" name="apellido" placeholder="Chanchito triste..."/>
+        <br>
+        <label for="comentario">Comentario:</label>
+        <textarea cols="50" rows="10" id="comentario" name="comentario" placeholder="Ingrese comentario...">Valor por defecto</textarea>
+        <br>
+        <button type="button"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" width="30" height="10" />Tipo botón</button>
+        <button type="reset">Tipo reset</button>
+        <button type="submit">Tipo submit</button>
+    </form>
+
+    <!-- Lista desordenada -->
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+    </ul>
+    
+    <!-- Lista ordenada -->
+    <ol>
+        <li value="50">Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+
+        <li>
+            <ol>
+                <li style="list-style-type: lower-alpha;">Sub Elemento 1</li>
+                <li style="list-style-type: lower-alpha;">Sub Elemento 2</li>
+                <li style="list-style-type: lower-alpha;">Sub Elemento 3</li>
+            </ol>
+        </li>
+    </ol>
+
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Hola beats</td>
+            <td>Gratis</td>
+        </tr>
+        <tr>
+            <td>Chanchito Feliz</td>
+            <td>19,90$</td>
+        </tr>
+        <tr>
+            <td>Chanchito Feliz muy Feliz</td>
+            <td>29,90$</td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <td>Total</td>
+            <td>49,80$</td>
+        </tfoot>
+        
+    </table>
+</body>
+</html>
