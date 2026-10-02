@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM con JavaScript</title>
+  </head>
+  <body>
+    <h1 id="titulo">HOLA MUNDO!!</h1>
+
+    <button id="btn-cambiar">Cambiar texto</button>
+
+    <input id="nombre" type="text" placeholder="Escribe tu nombre" />
+    <p id="saludo"></p>
+
+    <script>
+      // 1. OBTENER elementos del DOM
+      const titulo = document.getElementById("titulo");
+      const boton = document.querySelector("#btn-cambiar");
+      const inputNombre = document.querySelector("#nombre");
+      const saludo = document.querySelector("#saludo");
+
+      // 2. LEER el texto de un elemento
+      console.log(titulo.textContent); // "HOLA MUNDO!!"
+
+      // 3. AÑADIR un evento y MODIFICAR el texto al hacer click
+      boton.addEventListener("click", () => {
+        titulo.textContent = "¡Texto cambiado con JS!";
+        titulo.style.color = "tomato";
+      });
+
+      // 4. Evento "input": se dispara cada vez que el usuario escribe
+      inputNombre.addEventListener("input", (evento) => {
+        saludo.textContent = "Hola, " + evento.target.value;
+      });
+    </script>
+  </body>
+</html>
