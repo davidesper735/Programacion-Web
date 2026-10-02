@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.4 Delegación de eventos</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="04-delegacion.js" defer></script>
+  <style>
+    .columnas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .columnas h2 { margin-top: 8px; }
+    ul.tareas { list-style: none; padding: 0; margin: 0 0 12px; }
+    ul.tareas li { display: flex; align-items: center; gap: 6px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+    ul.tareas li .texto { flex: 1; }
+    ul.tareas li.hecha .texto { text-decoration: line-through; color: var(--muted); }
+    ul.tareas button { padding: 2px 8px; }
+    .contador { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>2.4 Delegación de eventos</h1>
+  <p>Dos listas iguales: a la izquierda, un listener por botón; a la derecha, un único listener en la lista.</p>
+
+  <div class="columnas">
+    <section class="panel">
+      <h2>❌ Un listener por botón</h2>
+      <ul class="tareas" id="lista-individual"></ul>
+      <div class="row">
+        <button id="btn-anadir-individual">Añadir tarea</button>
+        <button id="btn-repintar-individual" class="secondary">Volver a pintar</button>
+      </div>
+      <p class="contador" id="contador-individual"></p>
+    </section>
+
+    <section class="panel">
+      <h2>✅ Delegación</h2>
+      <ul class="tareas" id="lista-delegada"></ul>
+      <div class="row">
+        <button id="btn-anadir-delegada">Añadir tarea</button>
+        <button id="btn-repintar-delegada" class="secondary">Volver a pintar</button>
+      </div>
+      <p class="contador">Listeners en la lista: 1 (en el &lt;ul&gt;)</p>
+    </section>
+  </div>
+
+  <h2>Registro</h2>
+  <div class="row"><button class="secondary" id="btn-limpiar">Limpiar</button></div>
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

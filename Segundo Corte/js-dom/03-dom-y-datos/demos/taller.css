@@ -1,0 +1,64 @@
+/* Estilos del taller "Directorio de usuarios" (se entregan hechos: el taller es de JS) */
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 16px 0;
+}
+.barra input[type="search"] { flex: 1; min-width: 200px; }
+
+#estado { min-height: 1.5em; font-weight: 600; }
+#estado.error { color: var(--danger); }
+#estado.cargando { color: var(--accent); }
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.tarjeta {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.tarjeta.seleccionada { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+
+.tarjeta header { display: flex; align-items: center; gap: 10px; }
+.tarjeta h3 { margin: 0; font-size: 1rem; flex: 1; }
+.tarjeta p { margin: 0; font-size: 0.9rem; color: var(--muted); word-break: break-word; }
+.tarjeta .acciones { display: flex; gap: 6px; margin-top: 8px; }
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-weight: bold;
+  background: hsl(var(--tono, 220) 60% 50%);
+}
+
+.favorito {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.3rem;
+  padding: 0 4px;
+  line-height: 1;
+}
+.favorito[aria-pressed="true"] { color: #f59f00; }
+
+#detalle { margin-top: 24px; }
+#detalle h2 { margin-top: 0; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+#detalle ol { padding-left: 20px; margin: 0; }
+#detalle li { margin-bottom: 10px; }
+#detalle li strong { display: block; }
+#detalle li p { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }

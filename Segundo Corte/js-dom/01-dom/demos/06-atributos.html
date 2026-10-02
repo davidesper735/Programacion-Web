@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.6 Atributos y propiedades</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="06-atributos.js" defer></script>
+  <style>
+    .tarjeta {
+      padding: 16px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    .tarjeta.destacada { border-color: var(--warn); box-shadow: 0 4px 16px rgb(0 0 0 / 0.15); }
+    .tarjeta.oscura { background: #1d1d27; color: #fff; }
+    .tarjeta.grande { font-size: 1.4rem; }
+
+    .pista { background: var(--border); border-radius: 6px; height: 24px; margin: 8px 0; overflow: hidden; }
+    .barra { height: 100%; background: var(--accent); }
+    #barra-variable { width: calc(var(--progreso, 50) * 1%); background: hsl(var(--tono, 220) 70% 55%); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>1.6 Atributos, propiedades, clases y estilos</h1>
+
+  <h2>1. Atributo frente a propiedad</h2>
+  <div class="panel row">
+    <input id="nombre" value="Ana" aria-label="Nombre">
+    <label><input type="checkbox" id="acepto"> Acepto</label>
+    <a id="enlace" href="contacto.html">enlace relativo</a>
+    <button id="btn-comparar">Comparar</button>
+  </div>
+
+  <h2>2. <code>dataset</code></h2>
+  <div class="panel row">
+    <button class="secondary producto" data-id="42" data-precio="19.99" data-en-stock="true">Teclado</button>
+    <button class="secondary producto" data-id="7" data-precio="9.5" data-en-stock="false">Ratón</button>
+  </div>
+
+  <h2>3. <code>classList</code></h2>
+  <div class="row">
+    <button class="secondary" data-clase="destacada">toggle("destacada")</button>
+    <button class="secondary" data-clase="oscura">toggle("oscura")</button>
+    <button class="secondary" data-clase="grande">toggle("grande")</button>
+  </div>
+  <div class="panel tarjeta" id="tarjeta">Soy una tarjeta. Mira mi atributo <code>class</code> en DevTools.</div>
+
+  <h2>4. <code>style</code> y variables CSS</h2>
+  <div class="panel">
+    <label>style.width: <input type="range" id="rango-style" min="0" max="100" value="30"></label>
+    <div class="pista"><div class="barra" id="barra-style" style="width: 30%"></div></div>
+
+    <label>--progreso: <input type="range" id="rango-variable" min="0" max="100" value="50"></label>
+    <label>--tono: <input type="range" id="rango-tono" min="0" max="360" value="220"></label>
+    <div class="pista"><div class="barra" id="barra-variable"></div></div>
+  </div>
+
+  <h2>Registro</h2>
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

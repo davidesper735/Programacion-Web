@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.1 Árbol de nodos</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="01-arbol.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>1.1 Árbol de nodos y tipos de nodos</h1>
+  <p>Documento de muestra (el recuadro) y su árbol DOM.</p>
+
+  <h2>Muestra</h2>
+  <div class="panel" id="muestra">
+    <h3>Hola</h3>
+    <p>Esto es <strong>importante</strong>.</p>
+    <!-- un comentario -->
+    <table>
+      <tr><td>Celda</td></tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <button id="btn-completo">Dibujar árbol completo</button>
+    <button id="btn-elementos" class="secondary">Solo elementos</button>
+    <button id="btn-limpiar" class="secondary">Limpiar</button>
+  </div>
+
+  <h2>Árbol</h2>
+  <pre class="log"></pre>
+
+  <p class="hint">
+    Fíjate en el <code>&lt;tbody&gt;</code>: no está en el HTML fuente, lo ha añadido el navegador.
+    Compara con <kbd>Ctrl</kbd>+<kbd>U</kbd>.
+  </p>
+</main>
+</body>
+</html>

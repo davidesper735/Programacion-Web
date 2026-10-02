@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.2 Cargar JavaScript</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+
+  <!-- Registro compartido: se guarda en window para leerlo cuando el DOM exista -->
+  <script>
+    window.eventos = [];
+    const t0 = performance.now();
+    window.registrar = (mensaje) => {
+      const ms = (performance.now() - t0).toFixed(1).padStart(7);
+      window.eventos.push(`${ms} ms  ${mensaje}`);
+      console.log(mensaje);
+    };
+  </script>
+
+  <!-- 1) Script NORMAL en el <head>: se ejecuta antes de que exista el <body> -->
+  <script>
+    registrar(`[normal]  document.querySelector("h1") → ${document.querySelector("h1")}`);
+  </script>
+
+  <!-- 2) Script con DEFER: se ejecuta cuando el DOM está completo -->
+  <script src="02-carga-defer.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => registrar("[evento]  DOMContentLoaded"));
+    window.addEventListener("load", () => {
+      registrar("[evento]  load (imagen incluida)");
+      document.querySelector(".log").textContent = window.eventos.join("\n");
+    });
+  </script>
+</head>
+<body>
+<main>
+  <h1>1.2 Cargar JavaScript correctamente</h1>
+  <p>Recarga la página y observa el orden de ejecución.</p>
+
+  <h2>Orden de ejecución</h2>
+  <pre class="log"></pre>
+
+  <h2>Imagen "pesada"</h2>
+  <p class="hint">Hace que <code>load</code> llegue claramente después de <code>DOMContentLoaded</code>.</p>
+  <img id="imagen" alt="Imagen de ejemplo" width="300" height="120">
+</main>
+
+<script>
+  // Genera una imagen SVG grande (≈1,5 MB) para retrasar el evento load
+  const circulos = Array.from({ length: 12000 }, (_, i) =>
+    `<circle cx="${(i * 7) % 300}" cy="${(i * 13) % 120}" r="2" fill="hsl(${i % 360} 70% 55%)"/>`
+  ).join("");
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120">${circulos}</svg>`;
+  document.getElementById("imagen").src = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
+  registrar("[normal]  script al final del <body> → el <h1> ya existe: " + !!document.querySelector("h1"));
+</script>
+</body>
+</html>

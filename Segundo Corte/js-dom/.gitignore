@@ -1,0 +1,11 @@
+# Material del docente: no se publica en el repositorio de los estudiantes
+soluciones.js
+*/soluciones.js
+**/soluciones.js
+
+# Archivos de entorno y editor
+node_modules/
+.DS_Store
+.vscode/
+.idea/
+*.log

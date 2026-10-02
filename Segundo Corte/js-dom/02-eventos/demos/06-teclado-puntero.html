@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.6 Teclado y puntero</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="06-teclado-puntero.js" defer></script>
+  <style>
+    .tecla { font-family: var(--mono); font-size: 1.1rem; }
+    #tablero { position: relative; height: 220px; background: repeating-conic-gradient(var(--border) 0 25%, transparent 0 50%) 0 0 / 40px 40px; border-radius: 10px; overflow: hidden; }
+    #ficha {
+      position: absolute; left: 20px; top: 20px; width: 60px; height: 60px;
+      border-radius: 50%; background: var(--accent); color: #fff;
+      display: grid; place-items: center; font-weight: bold;
+      cursor: grab; touch-action: none; user-select: none;
+    }
+    #ficha:active { cursor: grabbing; }
+    .contadores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+    .contadores strong { display: block; font-size: 1.8rem; font-family: var(--mono); }
+    .contadores div { background: var(--accent-soft); border-radius: 8px; padding: 8px; }
+    #carrito { font-size: 1.2rem; }
+    .relleno { height: 80vh; display: grid; place-items: center; color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>2.6 Teclado, puntero, ventana y eventos personalizados</h1>
+
+  <h2>1. Teclado</h2>
+  <div class="panel">
+    <p>Pulsa teclas (con el foco fuera de los campos):
+      <span class="tecla" id="tecla">—</span></p>
+    <label>Buscador (atajo <kbd>/</kbd>): <input id="buscador" placeholder="Pulsa / para venir aquí"></label>
+  </div>
+
+  <h2>2. Pointer Events: arrastra la ficha (o muévela con las flechas)</h2>
+  <div id="tablero"><div id="ficha" tabindex="0" aria-label="Ficha movible">🙂</div></div>
+  <p class="hint" id="info-puntero">pointerType: —</p>
+
+  <h2>3. resize / scroll: recibidos, throttle y debounce</h2>
+  <p class="hint">Redimensiona la ventana o haz scroll.</p>
+  <div class="contadores">
+    <div>Eventos recibidos<strong id="c-total">0</strong></div>
+    <div>Throttle (200 ms)<strong id="c-throttle">0</strong></div>
+    <div>Debounce (300 ms)<strong id="c-debounce">0</strong></div>
+  </div>
+
+  <h2>4. CustomEvent</h2>
+  <div class="panel row" id="productos">
+    <button data-id="1" data-nombre="Teclado">Añadir teclado</button>
+    <button data-id="2" data-nombre="Ratón">Añadir ratón</button>
+    <button data-id="3" data-nombre="Monitor">Añadir monitor</button>
+    <span id="carrito">🛒 0</span>
+  </div>
+
+  <h2>Registro</h2>
+  <pre class="log"></pre>
+
+  <div class="relleno">(espacio para poder hacer scroll)</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.5 Contenido y XSS</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="05-contenido.js" defer></script>
+  <style>
+    #comentarios li { padding: 4px 0; border-bottom: 1px solid var(--border); }
+    textarea { width: 100%; font-family: var(--mono); }
+    .danger { background: var(--danger); border-color: var(--danger); }
+    .ok { background: var(--ok); border-color: var(--ok); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>1.5 Leer y modificar contenido</h1>
+  <p><code>textContent</code>, <code>innerText</code>, <code>innerHTML</code> y XSS.</p>
+
+  <h2>1. Leer</h2>
+  <div class="panel">
+    <p id="parrafo">
+      Hola <strong>mundo</strong>
+      <span style="display:none">oculto</span>
+    </p>
+  </div>
+  <button id="btn-leer">Leer las tres propiedades</button>
+
+  <h2>2. Escribir</h2>
+  <div class="row">
+    <input id="nuevo" size="30" value="Hola <em>mundo</em>" aria-label="Nuevo contenido">
+    <button data-propiedad="textContent" class="secondary">textContent =</button>
+    <button data-propiedad="innerText" class="secondary">innerText =</button>
+    <button data-propiedad="innerHTML" class="secondary">innerHTML =</button>
+  </div>
+  <div class="panel" id="destino">(destino)</div>
+
+  <h2>3. XSS: libro de visitas</h2>
+  <textarea id="comentario" rows="2" aria-label="Comentario"><img src="x" onerror="alert('Código del atacante ejecutado. Podría leer: ' + document.cookie)"></textarea>
+  <div class="row">
+    <button id="btn-vulnerable" class="danger">Publicar con innerHTML (vulnerable)</button>
+    <button id="btn-seguro" class="ok">Publicar con textContent (seguro)</button>
+    <button id="btn-vaciar" class="secondary">Vaciar</button>
+  </div>
+  <div class="panel"><ul id="comentarios"></ul></div>
+
+  <h2>4. <code>innerHTML +=</code> destruye el estado</h2>
+  <p class="hint">Escribe algo en el campo de la lista y luego pulsa cada botón.</p>
+  <div class="panel">
+    <ul id="lista">
+      <li><input placeholder="Escribe aquí…" aria-label="Campo de prueba"></li>
+    </ul>
+  </div>
+  <div class="row">
+    <button id="btn-inner-mas">Añadir con innerHTML +=</button>
+    <button id="btn-append" class="secondary">Añadir con append()</button>
+  </div>
+
+  <h2>Registro</h2>
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

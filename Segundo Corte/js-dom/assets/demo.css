@@ -1,0 +1,100 @@
+/* Estilos compartidos por todas las demos del curso */
+:root {
+  --bg: #f7f7f9;
+  --fg: #1d1d27;
+  --muted: #6b6b7b;
+  --card: #ffffff;
+  --border: #d9d9e3;
+  --accent: #3b5bdb;
+  --accent-soft: #e7ecff;
+  --ok: #2b8a3e;
+  --warn: #e8590c;
+  --danger: #c92a2a;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 16px 64px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+main { max-width: 900px; margin: 0 auto; }
+
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+h1 + p { color: var(--muted); margin-top: 0; }
+h2 { font-size: 1.15rem; margin: 32px 0 8px; }
+
+code, pre, kbd { font-family: var(--mono); font-size: 0.9em; }
+code { background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+kbd { border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--card); }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+button {
+  font: inherit;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+button.secondary { background: var(--card); color: var(--accent); }
+button:hover { filter: brightness(1.1); }
+
+input, select, textarea {
+  font: inherit;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--fg);
+}
+
+/* Consola visible en la página: permite ver la salida sin abrir DevTools */
+.log {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  background: #1d1d27;
+  color: #e6e6f0;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 80px;
+  max-height: 260px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+.log:empty::before { content: "// La salida aparecerá aquí"; color: #8b8ba0; }
+
+.hint { color: var(--muted); font-size: 0.9rem; }
+
+.resaltado { outline: 3px solid var(--warn); outline-offset: 2px; background: #fff4e6; }
+.activo { background: var(--accent-soft); border-color: var(--accent); }
+.oculto { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15151c;
+    --fg: #e6e6f0;
+    --muted: #9a9aad;
+    --card: #1f1f29;
+    --border: #34344a;
+    --accent: #748ffc;
+    --accent-soft: #262c4a;
+  }
+  .resaltado { background: #3a2a1a; }
+}

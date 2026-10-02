@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3.1 fetch y async/await</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="01-fetch.js" defer></script>
+  <style>
+    #estado { min-height: 1.5em; font-weight: 600; }
+    #estado.error { color: var(--danger); }
+    #estado.cargando { color: var(--accent); }
+    #lista { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+    #lista li { padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); }
+    #lista small { color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>3.1 <code>fetch</code> y <code>async/await</code></h1>
+  <p>Datos de <a href="https://jsonplaceholder.typicode.com" target="_blank" rel="noopener">JSONPlaceholder</a>. Necesita conexión a Internet.</p>
+
+  <div class="panel">
+    <div class="row">
+      <label>URL:
+        <select id="url">
+          <option value="https://jsonplaceholder.typicode.com/users">/users (correcta)</option>
+          <option value="https://jsonplaceholder.typicode.com/users?id=999">/users?id=999 (lista vacía)</option>
+          <option value="https://jsonplaceholder.typicode.com/usuarios-que-no-existen">/usuarios-que-no-existen (404)</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="chk-ok" checked> comprobar <code>respuesta.ok</code></label>
+      <button id="btn-cargar">Cargar</button>
+    </div>
+    <p class="hint">Para simular un error de red: DevTools → Network → <em>Offline</em>.</p>
+  </div>
+
+  <p id="estado"></p>
+  <ul id="lista"></ul>
+
+  <h2>Registro</h2>
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

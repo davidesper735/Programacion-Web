@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.5 Formularios</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="05-formularios.js" defer></script>
+  <style>
+    form { display: grid; gap: 14px; }
+    .campo { display: grid; gap: 4px; }
+    .campo label { font-weight: 600; }
+    .error { color: var(--danger); min-height: 1.2em; font-size: 0.85rem; }
+    input:user-invalid, textarea:user-invalid { border-color: var(--danger); }
+    input:user-valid, textarea:user-valid { border-color: var(--ok); }
+    fieldset { border: 1px solid var(--border); border-radius: 8px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>2.5 Formularios</h1>
+  <p>El formulario tiene <code>novalidate</code>: la validación la gestiona JavaScript con la API nativa.</p>
+
+  <form id="registro" class="panel" novalidate>
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" required minlength="2" aria-describedby="error-nombre">
+      <small class="error" id="error-nombre"></small>
+    </div>
+
+    <div class="campo">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required aria-describedby="error-email">
+      <small class="error" id="error-email"></small>
+    </div>
+
+    <div class="campo">
+      <label for="cp">Código postal</label>
+      <input id="cp" name="cp" pattern="[0-9]{5}" inputmode="numeric" aria-describedby="error-cp">
+      <small class="error" id="error-cp"></small>
+    </div>
+
+    <div class="campo">
+      <label for="clave">Contraseña</label>
+      <input id="clave" name="clave" type="password" required minlength="6" aria-describedby="error-clave">
+      <small class="error" id="error-clave"></small>
+    </div>
+
+    <div class="campo">
+      <label for="repetir">Repite la contraseña</label>
+      <input id="repetir" name="repetir" type="password" required aria-describedby="error-repetir">
+      <small class="error" id="error-repetir"></small>
+    </div>
+
+    <div class="campo">
+      <label for="pais">País</label>
+      <select id="pais" name="pais">
+        <option value="es">España</option>
+        <option value="mx">México</option>
+        <option value="ar">Argentina</option>
+        <option value="co">Colombia</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="nivel">Nivel de JavaScript: <output id="nivel-valor">5</output></label>
+      <input id="nivel" name="nivel" type="range" min="0" max="10" value="5">
+    </div>
+
+    <fieldset>
+      <legend>Intereses</legend>
+      <label><input type="checkbox" name="intereses" value="frontend"> Frontend</label>
+      <label><input type="checkbox" name="intereses" value="backend"> Backend</label>
+      <label><input type="checkbox" name="intereses" value="diseño"> Diseño</label>
+    </fieldset>
+
+    <div class="campo">
+      <label for="bio">Biografía</label>
+      <textarea id="bio" name="bio" rows="3" maxlength="140"></textarea>
+      <small class="hint" id="contador">0 / 140</small>
+    </div>
+
+    <div class="row">
+      <button>Enviar</button>
+      <button type="reset" class="secondary">Borrar</button>
+    </div>
+  </form>
+
+  <h2>Registro</h2>
+  <div class="row"><button class="secondary" id="btn-limpiar">Limpiar</button></div>
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.3 Seleccionar elementos</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="03-seleccionar.js" defer></script>
+  <style>
+    #zona a { margin-right: 12px; }
+    #zona li.hecha { text-decoration: line-through; color: var(--muted); }
+    #zona form { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>1.3 Seleccionar elementos</h1>
+  <p>Probador de selectores y colecciones vivas frente a estáticas.</p>
+
+  <h2>Zona de pruebas</h2>
+  <div class="panel" id="zona">
+    <nav id="menu">
+      <a href="#" class="enlace activo">Inicio</a>
+      <a href="#" class="enlace">Blog</a>
+      <a href="https://developer.mozilla.org" class="enlace externo" target="_blank">MDN</a>
+    </nav>
+
+    <ul class="tareas">
+      <li data-id="1" class="hecha">Comprar pan</li>
+      <li data-id="2">Estudiar DOM</li>
+      <li data-id="3">Hacer deporte</li>
+    </ul>
+
+    <form id="registro">
+      <input type="email" name="email" placeholder="email" required>
+      <label><input type="checkbox" name="acepto"> Acepto</label>
+    </form>
+  </div>
+
+  <h2>Probador de selectores</h2>
+  <div class="row">
+    <code>document.querySelectorAll(</code>
+    <input id="selector" size="30" value=".tareas li:not(.hecha)" aria-label="Selector CSS">
+    <code>)</code>
+  </div>
+  <p class="hint">Prueba: <code>li</code>, <code>#menu a</code>, <code>a[target="_blank"]</code>,
+    <code>.enlace.activo</code>, <code>li:nth-child(2)</code>, <code>input:required</code>, <code>[data-id="3"]</code></p>
+
+  <h2>Colección viva frente a estática</h2>
+  <div class="row">
+    <button id="btn-anadir">Añadir tarea</button>
+    <button id="btn-quitar" class="secondary">Quitar última</button>
+  </div>
+
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

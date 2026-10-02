@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.3 Propagación</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="03-propagacion.js" defer></script>
+  <style>
+    .caja { border: 2px solid var(--border); border-radius: 12px; padding: 20px; transition: background 0.2s; font-family: var(--mono); }
+    .caja > .caja { margin-top: 8px; }
+    .caja.captura { background: #d0ebff; border-color: #1c7ed6; }
+    .caja.burbuja { background: #ffe8cc; border-color: var(--warn); }
+    .leyenda span { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; }
+    .menu { position: relative; display: inline-block; }
+    .menu ul { position: absolute; top: 100%; left: 0; margin: 4px 0 0; padding: 8px 0; list-style: none; background: var(--card); border: 1px solid var(--border); border-radius: 8px; min-width: 160px; z-index: 1; }
+    .menu li { padding: 4px 16px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>2.3 Propagación</h1>
+
+  <h2>1. Captura y burbuja</h2>
+  <div class="row">
+    <label><input type="checkbox" id="chk-captura"> Escuchar también en captura</label>
+    <label><input type="checkbox" id="chk-stop"> <code>stopPropagation()</code> en el padre (burbuja)</label>
+  </div>
+  <p class="leyenda hint"><span style="background:#d0ebff"></span> captura &nbsp; <span style="background:#ffe8cc"></span> burbuja</p>
+
+  <div class="caja" id="abuelo">#abuelo
+    <div class="caja" id="padre">#padre
+      <div class="caja" id="hijo">#hijo
+        <button id="boton">Haz clic</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>2. Acciones por defecto</h2>
+  <label><input type="checkbox" id="chk-prevent" checked> Llamar a <code>preventDefault()</code></label>
+  <div class="panel row">
+    <a href="https://developer.mozilla.org" id="enlace" target="_blank">Enlace a MDN</a>
+    <form id="formulario" class="row">
+      <input name="q" placeholder="Busca algo" aria-label="Búsqueda">
+      <button>Enviar</button>
+    </form>
+    <label><input type="checkbox" id="casilla"> Casilla</label>
+  </div>
+
+  <h2>3. Efecto colateral de <code>stopPropagation</code>: el menú y el "clic fuera"</h2>
+  <label><input type="checkbox" id="chk-stop-menu"> El botón "Otra acción" usa <code>stopPropagation()</code></label>
+  <div class="panel row">
+    <div class="menu" id="menu">
+      <button id="btn-menu">Abrir menú ▾</button>
+      <ul hidden id="menu-lista"><li>Perfil</li><li>Ajustes</li><li>Salir</li></ul>
+    </div>
+    <button class="secondary" id="btn-otra">Otra acción</button>
+  </div>
+  <p class="hint">El menú se cierra con un listener en <code>document</code> que detecta clics fuera de él.</p>
+
+  <h2>Registro</h2>
+  <div class="row"><button class="secondary" id="btn-limpiar">Limpiar</button></div>
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

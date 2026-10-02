@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taller: punto de partida</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <link rel="stylesheet" href="taller.css">
+  <script src="taller-inicio.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>Directorio de usuarios</h1>
+  <p>Taller del tema 3 · datos de JSONPlaceholder</p>
+
+  <div class="barra">
+    <input type="search" id="buscador" placeholder="Buscar por nombre, email o empresa…" aria-label="Buscar usuarios">
+    <label><input type="checkbox" id="solo-favoritos"> Solo favoritos</label>
+    <button id="btn-recargar" class="secondary">Recargar</button>
+  </div>
+
+  <p id="estado" role="status"></p>
+  <section class="rejilla" id="usuarios" aria-label="Usuarios"></section>
+
+  <section class="panel" id="detalle" hidden>
+    <h2><span id="detalle-titulo"></span> <button class="secondary" id="btn-cerrar" aria-label="Cerrar">✕</button></h2>
+    <p id="detalle-estado" role="status"></p>
+    <ol id="detalle-lista"></ol>
+  </section>
+
+  <template id="tpl-usuario">
+    <article class="tarjeta">
+      <header>
+        <div class="avatar"></div>
+        <h3 class="nombre"></h3>
+        <button class="favorito" data-accion="favorito" aria-pressed="false" aria-label="Marcar como favorito">★</button>
+      </header>
+      <p class="email"></p>
+      <p class="empresa"></p>
+      <p class="ciudad"></p>
+      <div class="acciones">
+        <button class="secondary" data-accion="publicaciones">Ver publicaciones</button>
+      </div>
+    </article>
+  </template>
+</main>
+</body>
+</html>

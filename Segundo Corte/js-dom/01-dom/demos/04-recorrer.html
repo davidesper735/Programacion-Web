@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.4 Recorrer el árbol</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="04-recorrer.js" defer></script>
+  <style>
+    #zona section { border: 1px dashed var(--border); border-radius: 8px; padding: 8px 12px; }
+    #zona * { cursor: pointer; }
+    #navegacion button { font-family: var(--mono); font-size: 0.85rem; }
+    #actual { font-family: var(--mono); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>1.4 Recorrer el árbol</h1>
+  <p>Haz clic en un elemento de la zona de pruebas y navega con los botones.</p>
+
+  <div class="panel" id="zona">
+    <section>
+      <h3>Lista de la compra</h3>
+      <ul id="lista">
+        <li>Uno</li>
+        <li id="dos">Dos</li>
+        <!-- comentario -->
+        <li>Tres</li>
+      </ul>
+      <p>Un párrafo con <strong>negrita</strong> y <em>cursiva</em>.</p>
+    </section>
+  </div>
+
+  <div class="panel">
+    <div class="row">
+      <strong>Modo:</strong>
+      <label><input type="radio" name="modo" value="elementos" checked> elementos</label>
+      <label><input type="radio" name="modo" value="nodos"> nodos</label>
+    </div>
+    <p>Actual: <span id="actual"></span></p>
+    <div class="row" id="navegacion"></div>
+  </div>
+
+  <pre class="log"></pre>
+</main>
+</body>
+</html>

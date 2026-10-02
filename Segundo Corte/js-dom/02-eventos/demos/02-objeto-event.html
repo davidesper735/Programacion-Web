@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.2 El objeto event</title>
+  <link rel="stylesheet" href="../../assets/demo.css">
+  <script src="../../assets/demo.js" defer></script>
+  <script src="02-objeto-event.js" defer></script>
+  <style>
+    #tarjeta { display: flex; gap: 16px; align-items: center; padding: 24px; cursor: pointer; user-select: none; }
+    #tarjeta .icono { font-size: 2.5rem; background: var(--accent-soft); border-radius: 12px; padding: 8px 14px; }
+    #tarjeta h3 { margin: 0; }
+    #tarjeta p { margin: 4px 0 0; }
+    table { border-collapse: collapse; width: 100%; font-family: var(--mono); font-size: 0.85rem; }
+    td { border-bottom: 1px solid var(--border); padding: 4px 8px; }
+    td:first-child { color: var(--muted); width: 40%; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>2.2 El objeto <code>event</code></h1>
+
+  <h2>1. Ratón: haz clic en distintas partes (prueba también con Ctrl, Shift o botón derecho)</h2>
+  <div class="panel" id="tarjeta">
+    <span class="icono">🛒</span>
+    <div>
+      <h3>Comprar <strong>ahora</strong></h3>
+      <p>El listener está en la tarjeta entera.</p>
+    </div>
+  </div>
+  <button id="btn-simular" class="secondary">Simular clic con tarjeta.click()</button>
+
+  <h2>2. Teclado: escribe aquí</h2>
+  <input id="campo" placeholder="Pulsa teclas…" size="40" aria-label="Campo de teclado">
+
+  <h2>Propiedades del último evento</h2>
+  <div class="panel">
+    <table><tbody id="propiedades"></tbody></table>
+  </div>
+</main>
+</body>
+</html>

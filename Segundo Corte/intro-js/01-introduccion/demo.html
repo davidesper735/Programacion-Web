@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tema 1 · Cómo se enlaza JavaScript al HTML</title>
+
+    <!--
+    ORDEN DE EJECUCIÓN
+    Abre esta página, pulsa F12 y mira la consola.
+    Los mensajes NO aparecen en el orden en que están escritos aquí:
+    ese es justamente el tema de esta demo.
+  -->
+
+    <!-- (1) SCRIPT INTERNO: se ejecuta inmediatamente, aquí mismo. -->
+    <script>
+      console.log("1) Script INTERNO en el <head>: se ejecuta de inmediato.");
+      // Si intentamos tocar el <body> aquí, todavía no existe:
+      console.log("   ¿Existe el <h1>?", document.querySelector("h1")); // null
+    </script>
+
+    <!-- (2) SCRIPT EXTERNO CON defer: se descarga en paralelo y se ejecuta
+       cuando el HTML ya está completo. Es la forma recomendada. -->
+    <script src="demo-defer.js" defer></script>
+
+    <!-- (3) SCRIPT EXTERNO CON async: se ejecuta apenas termina de descargarse,
+       sin garantizar el orden respecto a otros scripts. -->
+    <script src="demo-async.js" async></script>
+  </head>
+
+  <body>
+    <h1>Tema 1 — Enlazar JavaScript</h1>
+
+    <p>
+      Abre la consola del navegador con <strong>F12</strong> y observa el orden
+      de los mensajes.
+    </p>
+
+    <!-- (4) EN LÍNEA (inline): funciona, pero es mala práctica.
+       Mezcla el comportamiento (JS) con la estructura (HTML). -->
+    <button onclick="alert('Esto es JavaScript EN LÍNEA: evítalo')">
+      Botón con JS en línea (mala práctica)
+    </button>
+
+    <!-- (5) SCRIPT AL FINAL DEL BODY: alternativa clásica a defer.
+       Aquí el HTML de arriba ya fue leído, así que sí encuentra el <h1>. -->
+    <script>
+      console.log("5) Script al final del <body>: el HTML ya existe.");
+      console.log(
+        "   ¿Existe el <h1>?",
+        document.querySelector("h1").textContent,
+      );
+    </script>
+  </body>
+</html>
