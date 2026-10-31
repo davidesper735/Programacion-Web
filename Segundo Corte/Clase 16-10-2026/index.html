@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ejercicio CRUD</h1>
+    <p>Este es un ejemplo de un ejercicio CRUD (Crear, Leer, Actualizar, Eliminar) en HTML.</p>
+
+
+    <h2>Agregar un nuevo producto</h2>
+
+    <form action="" method="post">
+        <input type="text" id="nombre" placeholder="Nombre del producto">
+        <input type="text" id="precio" placeholder="Precio">
+        <button id="agregar" type="submit">Agregar Producto</button>
+        <br><br>
+
+        <h2>Editar un producto existente</h2>
+
+        <input type="text" id="nombre-editar" placeholder="Nombre del producto a editar">
+        <input type="text" id="precio-editar" placeholder="Nuevo precio">
+        <button id="editar" type="submit">Editar Producto</button>
+        <br><br>
+    </form>
+
+    <h2>Lista de productos</h2>
+    <table id="tabla-productos" border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Producto 1</td>
+                <td>25</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+
+            <tr>
+                <td>Producto 2</td>
+                <td>30</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+
+            <tr>
+                <td>Producto 3</td>
+                <td>15</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+
+            <tr>
+                <td>Producto 4</td>
+                <td>40</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+
+            <tr>
+                <td>Producto 5</td>
+                <td>20</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+
+            <tr>
+                <td>Producto 6</td>
+                <td>35</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <script>
+        const nombreInput = document.getElementById('nombre');
+        const precioInput = document.getElementById('precio');
+        const agregarBtn = document.getElementById('agregar');
+        const tablaProductos = document.getElementById('tabla-productos');
+
+        // EDITAR
+
+        const editarBtn = document.getElementById("editar");
+        const nombreEditarInput = document.getElementById("nombre-editar");
+        const precioEditarInput = document.getElementById("precio-editar");
+
+        agregarBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const nombre = nombreInput.value.trim();
+            const precio = precioInput.value.trim();
+
+            if (!nombre || !precio) {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+
+            alert("Producto agregado: " + nombre + " - Precio: " + precio);
+
+            const nuevaFila = document.createElement('tr');
+            const celdaNombre = document.createElement('td');
+            const celdaPrecio = document.createElement('td');
+            const celdaEditar = document.createElement('td');
+            const celdaEliminar = document.createElement('td');
+
+            celdaNombre.textContent = nombre;
+            celdaPrecio.textContent = precio;
+            celdaEditar.innerHTML = '<button>Editar</button>';
+            celdaEliminar.innerHTML = '<button>Eliminar</button>';
+
+            nuevaFila.appendChild(celdaNombre);
+            nuevaFila.appendChild(celdaPrecio);
+            nuevaFila.appendChild(celdaEditar);
+            nuevaFila.appendChild(celdaEliminar);
+            tablaProductos.querySelector('tbody').appendChild(nuevaFila);
+            
+        });
+        
+        editarBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const nombreEditar = nombreEditarInput.value.trim();
+            const precioEditar = precioEditarInput.value.trim();
+
+            if (!nombreEditar || !precioEditar) {
+                alert("Por favor, complete todos los campos para editar.");
+                return;
+            }
+
+            // const filas = tablaProductos.querySelectorAll("tbody tr");
+            // let productoEncontrado = false;
+
+            // filas.forEach((fila) => {
+            //     const nombreProducto = fila.cells[0].textContent;
+
+            //     if (nombreProducto === nombreEditar) {
+            //         fila.cells[1].textContent = precioEditar;
+            //         productoEncontrado = true;
+            //     }
+            // });
+
+            // if (productoEncontrado) {
+            //     alert("Producto editado: " + nombreEditar + " - Nuevo precio: " + precioEditar);
+            // } else {
+            //     alert("Producto no encontrado: " + nombreEditar);
+            // }
+        });
+    
+    </script>
+</body>
+
+</html>
