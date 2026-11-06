@@ -17,7 +17,7 @@ import { obtenerPersonaje, listarPersonajes, obtenerUbicacion } from './rickandm
 
 try {
     const personaje = await obtenerPersonaje(1);
-    console.log("Nombre: " + spersonaje.name + "\nEspecie: " + personaje.species + "\nEstado: " + personaje.status + "\nGénero: " + personaje.gender);
+    console.log("Nombre: " + personaje.name + "\nEspecie: " + personaje.species + "\nEstado: " + personaje.status + "\nGénero: " + personaje.gender);
 
     const lista = await listarPersonajes(1);
     console.log(lista.results[0].name);

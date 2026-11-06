@@ -4,7 +4,7 @@ async function pedir(ruta) {
     const respuesta = await fetch(`${BASE_URL}/${ruta}`);
     
     if(!respuesta.ok) {
-        throw new Error("Pokemon no existe.");
+        throw new Error("Error.");
     }
     return respuesta.json();
 }

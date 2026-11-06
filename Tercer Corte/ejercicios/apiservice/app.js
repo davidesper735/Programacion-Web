@@ -1,10 +1,7 @@
-import { obtenerPokemon } from './pokeapi.service.js';
-import { listarPokemon } from './pokeapi.service.js';
-import { obtenerTipo } from './pokeapi.service.js';
-
+import { obtenerPokemon, listarPokemon, obtenerTipo } from './pokeapi.service.js';
 try {
-    const pikachu = await obtenerPokemon("pikachu");
-    console.log(pikachu);
+    const pokemon = await obtenerPokemon("pikachu");
+    console.log(pokemon);
 
     const lista = await listarPokemon(10);
     console.log(lista);
