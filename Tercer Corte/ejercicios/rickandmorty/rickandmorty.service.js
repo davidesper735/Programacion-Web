@@ -14,7 +14,7 @@ export function obtenerPersonaje(id) {
 }
 
 export function listarPersonajes(limite) {
-    return pedir(`character/?page=${limite}`);
+    return pedir(`character/?limit=${limite}`);
 }
 
 export function obtenerUbicacion(id) {

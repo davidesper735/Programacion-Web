@@ -15,14 +15,24 @@ import { obtenerPersonaje, listarPersonajes, obtenerUbicacion } from './rickandm
     console.log("Algo falló: " + error.message);
 } */
 
+/* Es mejor es usar el try/catch para cada funcion, 
+para poder manejar los errores de manera individual. */
 try {
     const personaje = await obtenerPersonaje(1);
-    console.log("Nombre: " + personaje.name + "\nEspecie: " + personaje.species + "\nEstado: " + personaje.status + "\nGénero: " + personaje.gender);
+    console.log("-------- Obtener Personaje --------");
+    console.log("Nombre: " + personaje.name + 
+        "\nEspecie: " + personaje.species + 
+        "\nEstado: " + personaje.status + 
+        "\nGénero: " + personaje.gender);
 
     const lista = await listarPersonajes(1);
-    console.log(lista.results[0].name);
+    console.log("-------- Lista de Personajes --------");
+    lista.results.forEach(personaje => {
+        console.log(personaje.name);
+    });
 
     const location = await obtenerUbicacion(1);
+    console.log("-------- Obtener Ubicación --------");
     console.log(location.name);
 
 } catch (error) {
