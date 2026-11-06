@@ -9,7 +9,7 @@ let productos = [
 ];
 let siguienteId = 3;
 
-app.get("/productos", (req, res) => {
+app.get("/productos", function (req, res) {
     res.status(200).json(productos);
 });
 
